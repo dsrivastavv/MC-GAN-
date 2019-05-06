@@ -25,7 +25,11 @@ global discriminator where weights of the local discriminator is shared with the
 
 ### Training
 GlyphNet is trained on the `Capitals_colorGrad64` dataset.  All know and unknown alphabets are tiled across channels resulting in the input of size 64x64x26. Each unknown alphabet channel is set to one. An additional L1 loss is applied between the output of the generator and ground truth. 
-ornaNet is trained following leave one out approach. For a known set of alphabet, we create a batch consisting of all know letters except one letter. We pass this batch through the glyphNet and obtain the corresponding letter for the left out alphabet. To obtain unknown alphabets we pass all the know alphabets through glyphNet. ornaNet is then trained on this input. 
+ornaNet is trained following leave one out approach. For a known set of alphabet, we create a batch consisting of all know letters except one letter. We pass this batch through the glyphNet and obtain the corresponding letter for the left out alphabet. To obtain unknown alphabets we pass all the know alphabets through glyphNet. This is taken as ornaNet conditional input.
+<p align='center'>
+  <img src='./outputs/training/CV_training.jpg' alt='input'/>
+</p>
+
 
 ### Result
 The following images display the outputs from glyphNet. The first row prints the conditional input, second-row prints fake image output by generator and the third-row prints ground truth. We observe that glyphNet can correctly generalize the output shape given very few glyphs of the typeface.
