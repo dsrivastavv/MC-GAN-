@@ -30,6 +30,14 @@ ornaNet is trained following leave one out approach. For a known set of alphabet
   <img src='./outputs/training/CV_training.jpg' alt='input'/>
 </p>
 
+### Baseline
+We implemented a baseline using image-to-image translation network for this task. In this baseline approach, we consider channel-wise letters in input and output stacks with dimensions B × 78 × 64 × 64, where B stands for training batch size and 78 corresponds to the 26 RGB channels. The input stack is given with "observed" color letters while all letters are generated in the output stack. We train this network on o`Capitals_colorGrad64` where we have applied randomly chosen color gradients on each grayscale font. Feeding in a random subset of RGB letters of an arbitrary font into this model during test time, it is expected to generate stylistically similar 26 letters. The figure below gives an output obtained using baseline:
+<p align='center'>
+  <img src='./outputs/baseline/0.png' alt='input'/>
+</p>
+<p align='center'>
+    Fig: Baseline
+</p>
 
 ### Result
 The following images display the outputs from glyphNet. The first row prints the conditional input, second-row prints fake image output by generator and the third-row prints ground truth. We observe that glyphNet can correctly generalize the output shape given very few glyphs of the typeface.
