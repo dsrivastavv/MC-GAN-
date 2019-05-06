@@ -4,8 +4,24 @@ Given a few colored and stylized texts of English alphabet generate remaining un
 ### Overview
 We implement 
 
+
+
 ### Dataset
 The dataset consists of stylized color images with 26 English alphabets. Each image is of size 64x64. An example image is given below
+
+### Architecture
+We divide the network into two stages each specialized for a particular task. The first network, glphyNet models the
+overall glyph shape and structure. The second network, ornaNet models the appearance with color and texture, enabling the transfer of fine decorative elements. Each of these networks follow a conditional GAN architecture.   
+<p align='center'>
+  <img src='./architecture/glyphNet.png' alt='input' width="400" height="300"/>
+  <img src='./architecture/ornaNet.png' alt='input' width="400" height="300"/>
+</p>
+<p align='center'>
+    Fig: glyphNet (Left) and ornaNet(Right)  
+</p>
+
+### Training
+
 
 ### Result
 The following images display the outputs from glyphNet. The first row prints the conditional input, second-row prints fake image output by generator and the third-row prints ground truth. We observe that glyphNet can correctly generalize the output shape given very few glyphs of the typeface.
