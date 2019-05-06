@@ -58,17 +58,3 @@ matplotlib==3.0.2
 tensorflow-gpu==1.12.0
 Keras==2.2.4
 ```
-
-### Starting Project
-1. `git clone https://github.com/somil55/CV2019.git`
-2. `cd CV2019`
-
-### Installing Virtual Environment and required packages
-1. `pip install virtualenv`
-2. `virtualenv venv`
-3. `source venv/bin/activate`
-4. `pip install -r requirements.txt`
-
-### Exiting Project
-1. Run `pip freeze > requirements.txt` if you update or install additional packages and commit
-2. Run `deactivate` to exit virtual environment
