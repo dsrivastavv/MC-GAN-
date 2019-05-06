@@ -32,18 +32,24 @@ The following images display the outputs from glyphNet. The first row prints the
   <img src='./outputs/glyphNet/1.png' alt='input' width="400" height="400"/>
   <img src='./outputs/glyphNet/10.png' alt='input' width="400" height="400"/>
 </p>
+<p align='center'>
+    Fig: GlyphNet output  
+</p>
 
 The next set of images display the outputs from ornaNet. The first row prints the conditional input to glyphNet generator, second-row prints conditional input to ornaNet generator, third-row prints ornaNet prediction and fourth-row prints the ground truth. ornaNet can generalize with the image gradients patterns and color. 
 <p align='center'>
   <img src='./outputs/ornaNet/1.png' alt='input' width="400" height="400"/>
   <img src='./outputs/ornaNet/10.png' alt='input' width="400" height="400"/>
 </p>
+<p align='center'>
+    Fig: ornaNet output  
+</p>
 
 ### Observations
 
 
 ## Requirements 
-The following are dependencies 
+The following packages are a minimum requirement to run this project
 
 ```
 numpy==1.16.2
