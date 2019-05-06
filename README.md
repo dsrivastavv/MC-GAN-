@@ -13,7 +13,8 @@ The dataset(named `Capitals_colorGrad64` ) consists of stylized color images wit
 
 ### Architecture
 We divide the network into two stages each specialized for a particular task. The first network, glphyNet models the
-overall glyph shape and structure. The second network, ornaNet models the appearance with color and texture, enabling the transfer of fine decorative elements. Each of these networks follow a conditional GAN architecture.   
+overall glyph shape and structure. The second network, ornaNet models the appearance with color and texture, enabling the transfer of fine decorative elements. Each of these networks follow a conditional GAN architecture. Generator is basically an encoder decoder model and ensures that input and output are of same dimension. Descriminator consist of a local and
+global discriminator where weights of the local discriminator is shared with the latter. Receptive field of global discriminator is whole image.  
 <p align='center'>
   <img src='./architecture/glyphNet.png' alt='input' width="400" height="300"/>
   <img src='./architecture/ornaNet.png' alt='input' width="400" height="300"/>
@@ -23,7 +24,8 @@ overall glyph shape and structure. The second network, ornaNet models the appear
 </p>
 
 ### Training
-Glyphnet is trained on the `Capitals_colorGrad64` dataset.  
+GlyphNet is trained on the `Capitals_colorGrad64` dataset.  All know and unknown alphabets are tiled across channels resulting in the input of size 64x64x26. Each unknown alphabet channel is set to one. An additional L1 loss is applied between the output of the generator and ground truth. 
+ornaNet is trained following leave one out approach. For a known set of alphabet, we create a batch consisting of all know letters except one letter. We pass this batch through the glyphNet and obtain the corresponding letter for the left out alphabet. To obtain unknown alphabets we pass all the know alphabets through glyphNet. ornaNet is then trained on this input. 
 
 ### Result
 The following images display the outputs from glyphNet. The first row prints the conditional input, second-row prints fake image output by generator and the third-row prints ground truth. We observe that glyphNet can correctly generalize the output shape given very few glyphs of the typeface.
