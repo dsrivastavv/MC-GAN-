@@ -2,8 +2,7 @@
 Given a few colored and stylized texts of English alphabet generate remaining unobserved glyphs.  
 
 ### Overview
-We implement 
-
+We implement MC-GAN architecture defined in [Multi-Content GAN for Few-Shot Font Style Transfer](https://arxiv.org/abs/1712.00516) to transfer glyph structure and style.  
 
 
 ### Dataset
@@ -24,7 +23,7 @@ overall glyph shape and structure. The second network, ornaNet models the appear
 </p>
 
 ### Training
-Glyphnet is trained on the `Capitals_colorGrad64` dataset. Input to the glyphnet is a 64x64x26 tenspo  
+Glyphnet is trained on the `Capitals_colorGrad64` dataset.  
 
 ### Result
 The following images display the outputs from glyphNet. The first row prints the conditional input, second-row prints fake image output by generator and the third-row prints ground truth. We observe that glyphNet can correctly generalize the output shape given very few glyphs of the typeface.
