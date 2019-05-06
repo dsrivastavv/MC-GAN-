@@ -50,10 +50,7 @@ The next set of images display the outputs from ornaNet. The first row prints th
     Fig: ornaNet output  
 </p>
 
-### Observations
-
-
-## Requirements 
+### Requirements 
 The following packages are a minimum requirement to run this project
 
 ```
