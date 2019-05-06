@@ -67,3 +67,6 @@ matplotlib==3.0.2
 tensorflow-gpu==1.12.0
 Keras==2.2.4
 ```
+### Instruction to run code
+1. Download dataset with `./dataset/download_font_dataset.sh Capitals64`
+2. Run corresponding model in `src` directory by `python src/<fileName>.py`
